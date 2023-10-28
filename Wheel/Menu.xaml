@@ -12,7 +12,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -21,19 +21,31 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Row="1"
-                Margin="20, 10"
-                Content="Play"
-                Click="PlayWheel"/>
-
-        <Button Grid.Row="2"
-                Margin="20, 10"
-                Content="Game rules"
-                Click="RulesOpen"/>
+        <Image Source="/WWW.jpg"
+               Grid.ColumnSpan="3"
+               Grid.RowSpan="5" Stretch="Fill"/>
 
         <Button Grid.Row="3"
                 Margin="20, 10"
+                Content="Play"
+                Click="PlayWheel" 
+                Background="#FF2B2121" 
+                Foreground="White"/>
+
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                Margin="20, 10"
+                Content="Game rules"
+                Click="RulesOpen" 
+                Background="#FF2B2121"
+                Foreground="White"/>
+
+        <Button Grid.Row="3"
+                Grid.Column="3"
+                Margin="20, 10"
                 Content="Exit" 
-                Click="ExitGame"/>
+                Click="ExitGame" 
+                Background="#FF2B2121"
+                Foreground="White"/>
     </Grid>
 </Window>
