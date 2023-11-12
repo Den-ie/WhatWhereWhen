@@ -36,6 +36,7 @@ namespace Wheel
             { Colors.PeachPuff, 5 },
             { Colors.LightPink, 6 },
             { Colors.LightYellow, 7 },
+            { Colors.Cyan, 8 },
         };
         System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
 
@@ -47,6 +48,17 @@ namespace Wheel
             start_button.IsEnabled = true;
             stop_button.IsEnabled = false;
         }
+
+        public MainWindow(int q)
+        {
+            InitializeComponent();
+            InitializeAdward();
+            //UpdateWallet();
+            start_button.IsEnabled = true;
+            stop_button.IsEnabled = false;
+            Height = q;
+        }
+
         private void InitializeAdward()
         {
             // Initialize the wheel
@@ -57,18 +69,19 @@ namespace Wheel
                 textBlocks[i] = pies.Children[2 * i + 1] as TextBlock;
             }
             // Fill adward information to the wheel
-            for (int i = 0, rdm; i < wheel_divided; i++)
+            for (int i = 0/*,rdm*/; i < wheel_divided; i++)
             {
-                do
-                {
-                    rdm = rand.Next(Award.Count);
-                } while (temp_award_allcate.Contains(rdm) && temp_award_allcate.Count < Award.Count);
-                temp_award_allcate.Add(rdm);
+                //do
+                //{
+                //    rdm = rand.Next(Award.Count);
+                //} while (temp_award_allcate.Contains(rdm) && temp_award_allcate.Count < Award.Count);
+                //temp_award_allcate.Add(rdm);
                 // Update color and text of award
-                path[i].Fill = new SolidColorBrush(Award.Keys.ElementAt(rdm));
-                textBlocks[i].Text = Award.Values.ElementAt(rdm).ToString();
+                path[i].Fill = new SolidColorBrush(Award.Keys.ElementAt(i));
+                textBlocks[i].Text = Award.Values.ElementAt(i).ToString();
             }
         }
+
         // Every second past, trigger this call
         private void DispatcherTimerTick(object sender, EventArgs e)
         {
@@ -125,6 +138,9 @@ namespace Wheel
             MessageBox.Show("Вам выпал вопрос с номером - " + awardAmount);
             //UpdateWallet(awardAmount);
 
+            string Vopros = Questions.Quest(awardAmount - 1);
+            MessageBox.Show(Vopros);
+            
             // Allow to start the game again
             start_button.Foreground = new SolidColorBrush(Colors.White);
             start_button.IsEnabled = true;

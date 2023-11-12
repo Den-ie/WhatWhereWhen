@@ -23,6 +23,7 @@ namespace Wheel
         {
             InitializeComponent();
         }
+        
 
         private void PlayWheel(object sender, RoutedEventArgs e)
         {
