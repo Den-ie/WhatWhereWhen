@@ -49,16 +49,6 @@ namespace Wheel
             stop_button.IsEnabled = false;
         }
 
-        public MainWindow(int q)
-        {
-            InitializeComponent();
-            InitializeAdward();
-            //UpdateWallet();
-            start_button.IsEnabled = true;
-            stop_button.IsEnabled = false;
-            Height = q;
-        }
-
         private void InitializeAdward()
         {
             // Initialize the wheel
@@ -96,11 +86,13 @@ namespace Wheel
                 ROTATE.Angle = (ROTATE.Angle + 30.34 / status) % 360;
             }
         }
+
         //private void UpdateWallet(int amountToChange = 0)
         //{
         //    money += amountToChange;
         //    textBlock.Text = "You have:\n" + money.ToString("C");
         //}
+
         private void StartClick(object sender, RoutedEventArgs e)
         {
             status = 1;
@@ -114,12 +106,14 @@ namespace Wheel
             stop_button.IsEnabled = true;
             stop_button.Foreground = new SolidColorBrush(Colors.White);
         }
+
         private void StopClick(object sender, RoutedEventArgs e)
         {
             status = 2;
             stop_button.Foreground = new SolidColorBrush(Colors.Transparent);
             stop_button.IsEnabled = false;
         }
+
         private void StopWheelAndGetAdward()
         {
             // Step the timer
@@ -140,7 +134,10 @@ namespace Wheel
 
             string Vopros = Questions.Quest(awardAmount - 1);
             MessageBox.Show(Vopros);
-            
+
+            QuestionWheel question = new QuestionWheel(Questions.Voprosi, awardAmount - 1);
+            question.ShowDialog();
+
             // Allow to start the game again
             start_button.Foreground = new SolidColorBrush(Colors.White);
             start_button.IsEnabled = true;

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Wheel"
         mc:Ignorable="d"
         Title="What? Where? When?" Height="300" Width="350">
-    <Grid>
+    <Grid Background="#FF171717">
         <Canvas x:Name="canvas2D" HorizontalAlignment="Center" Height="200" Margin="0,47,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.5,0.5">
             <Canvas.RenderTransform>
                 <TransformGroup>
