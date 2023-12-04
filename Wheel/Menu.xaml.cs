@@ -28,6 +28,8 @@ namespace Wheel
         private void PlayWheel(object sender, RoutedEventArgs e)
         {
             MainWindow wheel = new MainWindow();
+            Questions.ExpertPoints = 0;
+            Questions.ViewerPoints = 0;
             wheel.ShowDialog();
         }
 

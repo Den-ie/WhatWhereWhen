@@ -27,7 +27,7 @@ namespace Wheel
         Path[] path = new Path[wheel_divided];
         TextBlock[] textBlocks = new TextBlock[wheel_divided];
 
-        int[] LeftQuest = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        int[] LeftQuest = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
 
         Dictionary<Color, int> Award = new Dictionary<Color, int>()
         {
@@ -116,6 +116,8 @@ namespace Wheel
             stop_button.IsEnabled = false;
         }
 
+        int Switcher = 0;
+
         private void StopWheelAndGetAdward()
         {
             // Step the timer
@@ -131,11 +133,24 @@ namespace Wheel
             // 2 - 2.99 = award 2 etc.
             int awardClass = (int)Math.Floor(wheel_divided * ROTATE.Angle / 360);
             int awardAmount = int.Parse(textBlocks[awardClass].Text);
+
+            if (awardAmount != LeftQuest[awardAmount])
+            {
+                while (awardAmount != LeftQuest[awardAmount])
+                {
+                    awardAmount++;
+                    if (awardAmount == 9) awardAmount = 1;
+                }
+            }
+
+
             MessageBox.Show("Вам выпал вопрос с номером - " + awardAmount);
             //UpdateWallet(awardAmount);
 
             QuestionWheel question = new QuestionWheel(Questions.Voprosi, awardAmount - 1);
             question.ShowDialog();
+
+            LeftQuest[awardAmount] = -1;
 
             // Allow to start the game again
             start_button.Foreground = new SolidColorBrush(Colors.White);
@@ -147,10 +162,17 @@ namespace Wheel
             if (Questions.ExpertPoints == 5)
             {
                 MessageBox.Show("Поздравляем, данная игра за Вами!", "Победили знактоки!");
+                this.Close();
             }
             else if (Questions.ViewerPoints == 5)
             {
                 MessageBox.Show("К сожалению, данная игра не за Вами!", "Победили зрители!");
+                this.Close();
+            }
+            else if (Questions.ExpertPoints == Questions.ViewerPoints)
+            {
+                MessageBox.Show("Вопросы закончились! \nА команды набрали одинаковое количество очков.", "Ничья!");
+                this.Close();
             }
         }
     }
