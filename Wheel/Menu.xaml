@@ -27,7 +27,7 @@
 
         <Button Grid.Row="3"
                 Margin="20, 10"
-                Content="Play"
+                Content="Начать игру"
                 Click="PlayWheel" 
                 Background="#FF2B2121" 
                 Foreground="White"/>
@@ -35,7 +35,7 @@
         <Button Grid.Row="3"
                 Grid.Column="1"
                 Margin="20, 10"
-                Content="Game rules"
+                Content="Правила игры"
                 Click="RulesOpen" 
                 Background="#FF2B2121"
                 Foreground="White"/>
@@ -43,7 +43,7 @@
         <Button Grid.Row="3"
                 Grid.Column="3"
                 Margin="20, 10"
-                Content="Exit" 
+                Content="Выход" 
                 Click="ExitGame" 
                 Background="#FF2B2121"
                 Foreground="White"/>

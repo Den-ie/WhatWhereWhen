@@ -23,5 +23,10 @@ namespace Wheel
         {
             InitializeComponent();
         }
+
+        private void CloseRules(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

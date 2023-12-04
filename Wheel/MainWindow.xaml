@@ -206,7 +206,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="stop_button" Foreground="Transparent" Width="30" Height="50" Margin="0,18,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="StopClick" FontWeight="Bold">
+        <Button x:Name="stop_button" Foreground="Transparent" Width="30" Height="50" Margin="0,18,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Grid>

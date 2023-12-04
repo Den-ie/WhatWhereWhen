@@ -46,7 +46,7 @@ namespace Wheel
             InitializeAdward();
             //UpdateWallet();
             start_button.IsEnabled = true;
-            stop_button.IsEnabled = false;
+            //stop_button.IsEnabled = false;
         }
 
         private void InitializeAdward()
@@ -103,16 +103,20 @@ namespace Wheel
             dispatcherTimer.Start();
 
             start_button.IsEnabled = false;
-            stop_button.IsEnabled = true;
-            stop_button.Foreground = new SolidColorBrush(Colors.White);
+            //stop_button.IsEnabled = true;
+            //stop_button.Foreground = new SolidColorBrush(Colors.White);
+
+            status = 2;
+            //stop_button.Foreground = new SolidColorBrush(Colors.Transparent);
+            //stop_button.IsEnabled = false;
         }
 
-        private void StopClick(object sender, RoutedEventArgs e)
-        {
-            status = 2;
-            stop_button.Foreground = new SolidColorBrush(Colors.Transparent);
-            stop_button.IsEnabled = false;
-        }
+        //private void StopClick(object sender, RoutedEventArgs e)
+        //{
+        //    status = 2;
+        //    stop_button.Foreground = new SolidColorBrush(Colors.Transparent);
+        //    stop_button.IsEnabled = false;
+        //}
 
         private void StopWheelAndGetAdward()
         {
@@ -131,9 +135,6 @@ namespace Wheel
             int awardAmount = int.Parse(textBlocks[awardClass].Text);
             MessageBox.Show("Вам выпал вопрос с номером - " + awardAmount);
             //UpdateWallet(awardAmount);
-
-            string Vopros = Questions.Quest(awardAmount - 1);
-            MessageBox.Show(Vopros);
 
             QuestionWheel question = new QuestionWheel(Questions.Voprosi, awardAmount - 1);
             question.ShowDialog();

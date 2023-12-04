@@ -25,6 +25,7 @@ namespace Wheel
         public QuestionWheel(List<(string, string)> Vopr, int award)
         {
             InitializeComponent();
+            this.Height += 25;
             Quest.Content = Vopr[award].Item1;
             _vopr = Vopr;
             _award = award;
@@ -33,8 +34,17 @@ namespace Wheel
         private void GiveAnswer(object sender, RoutedEventArgs e)
         {
             if (Answer.Text == _vopr[_award].Item2)
-                MessageBox.Show("Ответ правильный! \n Зарабатывает Матье балл");
-            else MessageBox.Show("Ответ неправильный!");
+            {
+                MessageBox.Show(" Ответ правильный! \n Очко присуждается знатокам.");
+                Questions.ExpertPoints += 1;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(" Ответ неправильный! \n Очко присуждается команде зрителей.");
+                Questions.ViewerPoints += 1;
+                this.Close();
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wheel"
         mc:Ignorable="d"
-        Title="Rules" Height="350" Width="400">
+        Title="Rules" Height="370" Width="400" WindowStyle="None">
     <Grid Background="#FF171717">
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center">
@@ -15,22 +15,26 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top"
                        Foreground="White"
-                       Margin="0"/>
+                       Margin="0,20,0,0"/>
 
             <TextBlock Text="1) Вопросы лежат на игровом колесе, который разделён на 7 секторов. В каждом раунде запускается колесо, стрелка которого указывает на один из вопросов. На данный вопрос должен быть дан ответ." 
                        TextWrapping="Wrap"
                        Foreground="White"
                        Margin="10, 15"/>
 
-            <TextBlock Text="2) Если ответ был дан правильно, вы выигрываете раунд и зарабатываете очко. В случае неправильного ответа знатоков очко присуждается телезрителям." 
+            <TextBlock Text="2) Если ответ был дан правильно, вы выигрываете раунд и зарабатываете очко. В случае неправильного ответа очко присуждается телезрителям." 
                        TextWrapping="Wrap"
                        Foreground="White"
                        Margin="10, 15"/>
 
-            <TextBlock Text="3) Игра идёт до шести очков. Команда, первой набравшая шесть очков, побеждает в игре." 
+            <TextBlock Text="3) Игра идёт пока не выпадут все вопросы или икоманда не наберет 5 очков. Команда, имеющая большее количество очков или первой набравшая 5 очков, побеждает в игре." 
                        TextWrapping="Wrap"
                        Foreground="White"
-                       Margin="10, 20"/>
+                       Margin="10, 15"/>
+
+            <Button  Content="Выход в меню"
+                     Margin="10,0,10,20" Height="40"
+                     Click="CloseRules"/>
         </StackPanel>
     </Grid>
 </Window>

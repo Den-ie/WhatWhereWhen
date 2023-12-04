@@ -5,16 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wheel"
         mc:Ignorable="d"
-        Title="QuestionWheel" Height="450" Width="800">
-    <Grid>
+        Title="QuestionWheel" Height="200" Width="300">
+    <Grid Background="#FF2B2121">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Label x:Name="Quest"
                Content=""
-               Margin="80,80,80,200"/>
+               Margin="50,15,50,115"
+               Background="WhiteSmoke"/>
 
-        <TextBox Margin="50, 300, 250, 50"
-                 x:Name="Answer"/>
+        <TextBox Margin="20,124,95,41"
+                 x:Name="Answer"
+                 Background="WhiteSmoke"/>
 
-        <Button Margin="600, 300, 50, 50"
+        <Button Margin="215,124,10,41"
                 Content="Ответить"
                 Click="GiveAnswer"/>
 
