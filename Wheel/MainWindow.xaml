@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wheel"
         mc:Ignorable="d"
-        Title="What? Where? When?" Height="300" Width="350">
+        WindowStartupLocation="CenterScreen"
+        Title="What? Where? When?" Height="350" Width="470" ResizeMode="NoResize">
     <Grid Background="#FF171717">
-        <Canvas x:Name="canvas2D" HorizontalAlignment="Center" Height="200" Margin="0,47,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Очки знатоков - " Margin="285,121,60,144" Foreground="White"/>
+        <Label Content="Очки зрителей - " Margin="285,195,60,75" Foreground="White"/>
+
+        <Label x:Name="ExPoints" Foreground="White" Margin="380,122,0,149" Content="0"/>
+        <Label x:Name="ViewPoints" Foreground="White" Margin="380,196,0,80" Content="0"/>
+        <Canvas x:Name="canvas2D" HorizontalAlignment="Left" Height="200" Margin="32,79,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.5,0.5">
             <Canvas.RenderTransform>
                 <TransformGroup>
                     <RotateTransform x:Name="ROTATE" Angle="22.5"/>
@@ -169,7 +175,7 @@
                 </TextBlock>
             </Canvas>
         </Canvas>
-        <Button x:Name="start_button" Foreground="White" Width="50" Height="50" Margin="256,23,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="StartClick" FontWeight="Bold">
+        <Button x:Name="start_button" Foreground="White" Width="50" Height="50" Margin="0,37,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="StartClick" FontWeight="Bold">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Grid Background="Transparent">
@@ -206,7 +212,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="stop_button" Foreground="Transparent" Width="30" Height="50" Margin="0,18,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold">
+        <Button x:Name="stop_button" Click="StopClick" Foreground="Transparent" Width="30" Height="50" Margin="117,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Grid>

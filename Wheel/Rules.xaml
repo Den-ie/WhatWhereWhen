@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wheel"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Rules" Height="370" Width="400" WindowStyle="None">
     <Grid Background="#FF171717">
         <StackPanel HorizontalAlignment="Center"

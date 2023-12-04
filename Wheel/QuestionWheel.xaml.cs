@@ -21,7 +21,7 @@ namespace Wheel
     {
          List<(string, string)> _vopr = new List<(string, string)> ();
         int _award;
-        
+
         public QuestionWheel(List<(string, string)> Vopr, int award)
         {
             InitializeComponent();

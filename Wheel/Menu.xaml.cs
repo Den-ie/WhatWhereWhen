@@ -23,7 +23,7 @@ namespace Wheel
         {
             InitializeComponent();
         }
-        
+
 
         private void PlayWheel(object sender, RoutedEventArgs e)
         {
@@ -40,7 +40,7 @@ namespace Wheel
         private void ExitGame(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Are you sure?", "Exit");
-           
+            this.Close();
         }
     }
 }

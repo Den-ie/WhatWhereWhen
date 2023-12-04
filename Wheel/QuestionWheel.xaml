@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wheel"
         mc:Ignorable="d"
-        Title="QuestionWheel" Height="200" Width="300">
+        WindowStartupLocation="CenterScreen"
+        Title="QuestionWheel" Height="150" Width="300" ResizeMode="CanMinimize" WindowStyle="None">
     <Grid Background="#FF2B2121">
 
         <Grid.ColumnDefinitions>
@@ -13,14 +14,14 @@
         </Grid.ColumnDefinitions>
         <Label x:Name="Quest"
                Content=""
-               Margin="50,15,50,115"
-               Background="WhiteSmoke"/>
+               Margin="25,10,25,80" Foreground="White"
+               />
 
-        <TextBox Margin="20,124,95,41"
+        <TextBox Margin="15,100,100,20"
                  x:Name="Answer"
                  Background="WhiteSmoke"/>
 
-        <Button Margin="215,124,10,41"
+        <Button Margin="215,100,15,20"
                 Content="Ответить"
                 Click="GiveAnswer"/>
 

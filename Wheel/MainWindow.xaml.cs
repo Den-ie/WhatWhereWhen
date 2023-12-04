@@ -27,6 +27,8 @@ namespace Wheel
         Path[] path = new Path[wheel_divided];
         TextBlock[] textBlocks = new TextBlock[wheel_divided];
 
+        int[] LeftQuest = { 1, 2, 3, 4, 5, 6, 7, 8 };
+
         Dictionary<Color, int> Award = new Dictionary<Color, int>()
         {
             { Colors.Red, 1 },            //Red
@@ -46,7 +48,7 @@ namespace Wheel
             InitializeAdward();
             //UpdateWallet();
             start_button.IsEnabled = true;
-            //stop_button.IsEnabled = false;
+            stop_button.IsEnabled = false;
         }
 
         private void InitializeAdward()
@@ -103,20 +105,16 @@ namespace Wheel
             dispatcherTimer.Start();
 
             start_button.IsEnabled = false;
-            //stop_button.IsEnabled = true;
-            //stop_button.Foreground = new SolidColorBrush(Colors.White);
-
-            status = 2;
-            //stop_button.Foreground = new SolidColorBrush(Colors.Transparent);
-            //stop_button.IsEnabled = false;
+            stop_button.IsEnabled = true;
+            stop_button.Foreground = new SolidColorBrush(Colors.White);
         }
 
-        //private void StopClick(object sender, RoutedEventArgs e)
-        //{
-        //    status = 2;
-        //    stop_button.Foreground = new SolidColorBrush(Colors.Transparent);
-        //    stop_button.IsEnabled = false;
-        //}
+        private void StopClick(object sender, RoutedEventArgs e)
+        {
+            status = 2;
+            stop_button.Foreground = new SolidColorBrush(Colors.Transparent);
+            stop_button.IsEnabled = false;
+        }
 
         private void StopWheelAndGetAdward()
         {
@@ -142,6 +140,18 @@ namespace Wheel
             // Allow to start the game again
             start_button.Foreground = new SolidColorBrush(Colors.White);
             start_button.IsEnabled = true;
+
+            ExPoints.Content = Questions.ExpertPoints.ToString();
+            ViewPoints.Content = Questions.ViewerPoints.ToString();
+
+            if (Questions.ExpertPoints == 5)
+            {
+                MessageBox.Show("Поздравляем, данная игра за Вами!", "Победили знактоки!");
+            }
+            else if (Questions.ViewerPoints == 5)
+            {
+                MessageBox.Show("К сожалению, данная игра не за Вами!", "Победили зрители!");
+            }
         }
     }
 }
