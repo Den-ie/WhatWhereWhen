@@ -169,7 +169,7 @@ namespace Wheel
                 MessageBox.Show("К сожалению, данная игра не за Вами!", "Победили зрители!");
                 this.Close();
             }
-            else if (Questions.ExpertPoints == Questions.ViewerPoints)
+            else if (Questions.ExpertPoints == 4 || Questions.ViewerPoints == 4)
             {
                 MessageBox.Show("Вопросы закончились! \nА команды набрали одинаковое количество очков.", "Ничья!");
                 this.Close();
